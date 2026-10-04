@@ -1,5 +1,5 @@
 :root{--void:#07080c;--surface:#0d0f16;--line:rgba(255,255,255,.12);--text:#eceef6;--muted:#9097ad;--signal:#5ef0ff;--ok:#3ddc97;--bad:#ff6b7a;
---display:'Bricolage Grotesque Variable','Helvetica Neue',Arial,sans-serif;--sans:'Geist Variable',system-ui,sans-serif;--mono:'Geist Mono Variable',ui-monospace,monospace;
+--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--sans:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
 --pad:clamp(1.25rem,5vw,5rem);--gap:clamp(1.5rem,4vw,4rem);box-sizing:border-box;padding-top:env(safe-area-inset-top,0)}
 *,*::before,*::after{box-sizing:inherit}
 html{background:var(--void);scroll-padding-top:5rem}
