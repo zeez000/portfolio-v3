@@ -6,19 +6,6 @@
 <title>Abdul Azeez – DevOps / Cloud / Infrastructure</title>
 <meta name="description" content="Early-career DevOps and cloud engineer in Bengaluru. Containerized, event-driven systems, CI, and Linux troubleshooting.">
 <meta name="theme-color" content="#07080c">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="./src/styles/main.css">
-<script type="importmap">
-{
-  "imports": {
-    "gsap": "https://esm.sh/gsap@3.13.0",
-    "gsap/ScrollTrigger": "https://esm.sh/gsap@3.13.0/ScrollTrigger",
-    "lenis": "https://esm.sh/lenis@1.3.11"
-  }
-}
-</script>
 <script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__ok)document.documentElement.classList.remove('js')},3000)</script>
 </head>
 <body>
@@ -43,24 +30,8 @@
 
 <main id="main">
 <section class="hero" id="top">
-  <div class="hero-kicker rise"><span>DEVOPS / CLOUD / INFRASTRUCTURE</span><span>BENGALURU · INDIA</span></div>
-  <div class="hero-stage">
-    <h1><span class="mask"><span class="ln">Abdul</span></span><span class="mask"><span class="ln">Azeez</span></span></h1>
-    <div class="hero-visual rise" aria-hidden="true">
-      <div class="visual-grid"></div>
-      <div class="visual-beam"></div>
-      <div class="visual-node node-a"><span></span><b>01</b><small>GATEWAY</small></div>
-      <div class="visual-node node-b"><span></span><b>02</b><small>KAFKA</small></div>
-      <div class="visual-node node-c"><span></span><b>03</b><small>CONTAINERS</small></div>
-      <div class="visual-node node-d"><span></span><b>04</b><small>OBSERVE</small></div>
-      <svg class="visual-links" viewBox="0 0 600 360" preserveAspectRatio="none">
-        <path d="M90 100 C190 80 235 145 300 165 S430 165 510 90"/>
-        <path d="M90 260 C190 280 235 215 300 195 S430 195 510 270"/>
-        <path d="M300 165 L300 195"/>
-      </svg>
-      <div class="visual-status"><i></i><span>SYSTEMS IN MOTION</span><em>LIVE MODEL</em></div>
-    </div>
-  </div>
+  <div class="hero-topo" data-topo aria-hidden="true"></div>
+  <h1><span class="mask"><span class="ln">Abdul</span></span><span class="mask"><span class="ln">Azeez</span></span></h1>
   <div class="hero-foot">
     <div>
       <p class="role rise">DevOps, cloud and infrastructure.<br>Early career, Bengaluru.</p>
@@ -78,9 +49,9 @@
 <section id="work" class="sec" data-label="Projects">
   <h2>Projects</h2>
   <article class="row feat">
-    <div class="project-index" aria-hidden="true">01</div>
     <h3>Event-driven e-commerce microservices platform</h3>
     <p>Four Node.js services behind an API gateway, talking through Kafka. Orders are confirmed or rejected by an inventory service that reserves stock atomically. Runs locally with Docker Compose; CI builds the stack and runs an end-to-end smoke test.</p>
+    <div class="marq" aria-hidden="true"><div><span>Node.js Express Kafka MongoDB Redis Docker Compose GitHub Actions Kubernetes Prometheus Grafana&nbsp;</span><span>Node.js Express Kafka MongoDB Redis Docker Compose GitHub Actions Kubernetes Prometheus Grafana&nbsp;</span></div></div>
     <ul class="tags"><li>Node.js</li><li>Express</li><li>Kafka (KRaft)</li><li>MongoDB</li><li>Redis</li><li>Docker Compose</li><li>GitHub Actions</li><li>Kubernetes manifests</li><li>Prometheus and Grafana</li></ul>
     <pre class="trace" aria-label="Commands and result quoted from the repository README"><code>$ docker compose up --build -d
 $ bash scripts/smoke-test.sh
@@ -91,7 +62,6 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
     <a href="#case">Read the case study</a>
   </article>
   <article class="row">
-    <div class="project-index" aria-hidden="true">02</div>
     <h3>Linux Digital Detective</h3>
     <p>A Linux observability and incident-forensics lab. An agent watches CPU, memory, disk, nginx and port 80, records incidents as state transitions, and captures process, socket, journal and systemctl snapshots when something fails. A FastAPI service exposes it, including Prometheus-format metrics, and the agent and API can run as systemd services.</p>
     <ul class="tags"><li>Linux</li><li>systemd</li><li>Python</li><li>FastAPI</li><li>nginx</li><li>Prometheus-format metrics</li><li>GitHub Actions tests</li></ul>
@@ -99,45 +69,21 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
   </article>
 </section>
 
-<section id="system" class="sec" data-label="System">
-  <h2>How the platform fits together</h2>
-  <p class="cap">Architecture diagram. Static, based on the repository README.</p>
-  <figure class="diagram">
-    <svg viewBox="0 0 720 300" role="img" aria-labelledby="dt dd">
-      <title id="dt">E-commerce platform architecture</title>
-      <desc id="dd">A client calls the API gateway on port 8080, which routes to the product service on 3000, inventory on 3001 and order on 3002. The services share MongoDB, product uses Redis, and all communicate through Kafka topics product-events, order-events and inventory-events.</desc>
-      <g class="n" font-size="13">
-        <rect x="10" y="120" width="90" height="44" rx="4"/><text x="55" y="147">Client</text>
-        <rect x="150" y="120" width="130" height="44" rx="4"/><text x="215" y="147">API gateway :8080</text>
-        <rect x="340" y="20" width="150" height="44" rx="4"/><text x="415" y="47">Product :3000</text>
-        <rect x="340" y="120" width="150" height="44" rx="4"/><text x="415" y="147">Inventory :3001</text>
-        <rect x="340" y="220" width="150" height="44" rx="4"/><text x="415" y="247">Order :3002</text>
-        <rect x="560" y="20" width="140" height="44" rx="4"/><text x="630" y="47">Redis</text>
-        <rect x="560" y="120" width="140" height="44" rx="4"/><text x="630" y="147">Kafka :9092</text>
-        <rect x="560" y="220" width="140" height="44" rx="4"/><text x="630" y="247">MongoDB</text>
-      </g>
-      <g class="e">
-        <path class="edge-main" d="M100 142H150M280 142H340"/>
-        <path class="edge-top" d="M280 142L340 42M490 42H560"/>
-        <path class="edge-mid" d="M490 142H560"/>
-        <path class="edge-bottom" d="M280 142L340 242M490 242H560"/>
-      </g>
-    </svg>
-    <figcaption>Topics: product-events, order-events, inventory-events.</figcaption>
-  </figure>
-  <h3>Order flow</h3>
-  <p class="cap">Simulation. Not live infrastructure.</p>
-  <div class="sim" data-sim>
-    <div class="ctl">
-      <label>Stock <select id="sim-stock"><option value="ok">Enough</option><option value="no">Insufficient</option></select></label>
-      <button class="btn" id="sim-play">Play</button><button class="btn" id="sim-step">Step</button><button class="btn" id="sim-reset">Reset</button>
+<section id="system" class="sec stage-sec" data-label="System">
+  <h2>System flow</h2>
+  <p class="cap">Architecture / System Flow. A simulation drawn from the repository README, not a live system.</p>
+  <div class="stage">
+    <div class="flow" data-flow role="img" aria-label="Client calls the API gateway on 8080, which routes to Product 3000, Inventory 3001 and Order 3002. Order and Inventory exchange order and inventory events through Kafka on 9092. Product uses Redis and the services store data in MongoDB."></div>
+    <div class="panel">
+      <div class="ctl"><label>Stock <select id="sim-stock"><option value="ok">Enough</option><option value="no">Insufficient</option></select></label>
+      <button class="btn mag" id="sim-play">Play</button><button class="btn" id="sim-step">Step</button><button class="btn" id="sim-reset">Reset</button></div>
+      <ol id="sim-log" aria-live="polite"></ol>
     </div>
-    <ol id="sim-log" aria-live="polite"></ol>
   </div>
+  <p class="cap">Topics: product-events, order-events, inventory-events. Redis caches the product list. MongoDB stores products, inventory and orders.</p>
 </section>
 
 <section id="case" class="sec case" data-label="Case study">
-  <div class="section-signal" aria-hidden="true"><span>CASE STUDY</span><b>EVENT-DRIVEN SYSTEM</b></div>
   <h2>E-commerce platform case study</h2>
   <p class="cap">Drawn from the repository README.</p>
   <div class="cs"><h3>The problem</h3><p>A stock check done with plain REST calls couples every service to every other. The project explores what changes when services only share events.</p></div>
@@ -177,7 +123,7 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
   <p><a href="https://github.com/zeez000" rel="noopener">GitHub</a> and <a href="https://linkedin.com/in/abdul-azeez-046062249" rel="noopener">LinkedIn</a></p>
 </section>
 </main>
-<script type="module" src="./src/main.js"></script>
+<script type="module" src="/src/main.js"></script>
 <noscript><style>.mask .ln{transform:none!important}</style></noscript>
 </body>
 </html>
