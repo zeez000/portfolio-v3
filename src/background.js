@@ -10,7 +10,7 @@ uniform vec2 m;
 float band(vec2 uv,float y,float amp,float freq,float speed){
   float wave=sin(uv.x*freq+t*speed+sin(uv.x*1.7-t*.05)*.9)*amp;
   float d=abs(uv.y-(y+wave));
-  return smoothstep(.19,.0,d);
+  return 1.0-smoothstep(0.0,.19,d);
 }
 
 void main(){
