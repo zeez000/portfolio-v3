@@ -20,7 +20,7 @@ a{color:inherit;text-underline-offset:.25em;text-decoration-thickness:1px}a:hove
 main{padding:0 var(--pad)}
 /* hero */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 0 3rem}
-h1{margin:0 0 clamp(2rem,5vw,4.5rem) -.035em;font:780 clamp(4.2rem,18vw,17rem)/.82 var(--display);letter-spacing:-.048em}
+h1{margin:0 0 clamp(2rem,5vw,4.5rem) -.035em;font:780 clamp(4.2rem,14.8vw,14.5rem)/.84 var(--display);letter-spacing:-.048em;max-width:54vw}
 .mask{display:block;overflow:hidden;padding:.06em 0 .1em}.ln{display:block}
 .hero-foot{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:end;border-top:1px solid var(--line);padding-top:1.5rem}
 .role{font:600 clamp(1.25rem,2.5vw,2.05rem)/1.16 var(--display);letter-spacing:-.018em;margin:0 0 1rem}.lede{color:var(--muted);max-width:32rem;margin:0}
@@ -55,7 +55,7 @@ code{font:.88em var(--mono);color:var(--signal)}
 .cs h3{position:sticky;top:5.5rem;align-self:start;margin:0}.cs p{margin:0;font-size:1.1rem}
 /* skills / misc */
 .skills>div{padding:1.25rem 0;border-top:1px solid var(--line)}.skills h3{margin:0 0 .25rem}.skills p{color:var(--muted)}
-.big{font:700 clamp(1.5rem,5.5vw,4rem)/1.1 var(--display);letter-spacing:-.03em;word-break:break-word}
+.big{font:600 clamp(1.15rem,2.4vw,2.25rem)/1.2 var(--display);letter-spacing:-.02em;word-break:break-word}
 /* progressive enhancement: hidden states only while JS is alive; index.html removes .js if the app fails to start */
 .js .mask .ln{transform:translateY(105%)}
 .js .rise,.js .row,.js .stage,.js .skills>div{opacity:0;transform:translateY(16px)}
@@ -63,7 +63,7 @@ code{font:.88em var(--mono);color:var(--signal)}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.js .mask .ln,.js .rise,.js .row,.js .stage,.js .skills>div{opacity:1;transform:none}.progress{display:none}}
 /* ===== v2 visual layer ===== */
 .hero{position:relative;overflow:clip}
-.hero-topo{position:absolute;right:0;top:10%;width:min(56vw,920px);pointer-events:none;opacity:.96;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%)}
+.hero-topo{position:absolute;right:1.5vw;top:15%;width:min(46vw,840px);pointer-events:none;opacity:.98;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 100%)}
 h1,.hero-foot{position:relative;z-index:1}
 .tp{display:block;width:100%;height:auto;overflow:visible}
 .tl{fill:none;stroke:rgba(150,170,255,.28);stroke-width:1.2}.tl.hot{stroke:var(--signal);stroke-width:1.8}
@@ -88,5 +88,10 @@ h1,.hero-foot{position:relative;z-index:1}
 @media (max-width:860px){.hero-topo{position:static;width:100%;margin:0 0 1.35rem;-webkit-mask-image:none;mask-image:none;opacity:.92}.stage{grid-template-columns:minmax(0,1fr)}.feat h3{font-size:clamp(2.5rem,12vw,5rem)}}
 @media (prefers-reduced-motion:reduce){.marq div{animation:none}.cs{opacity:1}.js .sec h2{clip-path:none;transform:none}}
 
-.hero-topo::before{content:"SYSTEM TOPOLOGY · E-COMMERCE PLATFORM";position:absolute;right:0;top:-1.45rem;color:var(--muted);font:500 .68rem/1 var(--mono);letter-spacing:.12em}
+.hero-topo::before{content:"SYSTEM TOPOLOGY · E-COMMERCE PLATFORM";position:absolute;right:0;top:-1.45rem;color:var(--muted);font:500 .64rem/1 var(--mono);letter-spacing:.11em}
 @media (max-width:860px){.hero-topo::before{position:static;display:block;margin-bottom:.65rem;text-align:right;font-size:.62rem}.hero .tp{min-width:0}}
+
+@media (min-width:861px){
+  .hero h1{width:54vw}
+  .hero-topo .tp{filter:drop-shadow(0 8px 24px rgba(0,0,0,.18))}
+}
