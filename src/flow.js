@@ -29,7 +29,7 @@ function travel(s, k, dur, done) {
 
 export function initHeroTopology() {
   const host = document.querySelector('[data-topo]'); if (!host) return;
-  const s = build(host, false);
+  const s = build(host, true);
   if (reduce) return;
   const L = (p) => p.getTotalLength();
   Object.values(s.paths).forEach((p) => { p.style.strokeDasharray = L(p); p.style.strokeDashoffset = L(p); });
