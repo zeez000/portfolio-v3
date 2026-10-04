@@ -43,7 +43,24 @@
 
 <main id="main">
 <section class="hero" id="top">
-  <h1><span class="mask"><span class="ln">Abdul</span></span><span class="mask"><span class="ln">Azeez</span></span></h1>
+  <div class="hero-kicker rise"><span>DEVOPS / CLOUD / INFRASTRUCTURE</span><span>BENGALURU · INDIA</span></div>
+  <div class="hero-stage">
+    <h1><span class="mask"><span class="ln">Abdul</span></span><span class="mask"><span class="ln">Azeez</span></span></h1>
+    <div class="hero-visual rise" aria-hidden="true">
+      <div class="visual-grid"></div>
+      <div class="visual-beam"></div>
+      <div class="visual-node node-a"><span></span><b>01</b><small>GATEWAY</small></div>
+      <div class="visual-node node-b"><span></span><b>02</b><small>KAFKA</small></div>
+      <div class="visual-node node-c"><span></span><b>03</b><small>CONTAINERS</small></div>
+      <div class="visual-node node-d"><span></span><b>04</b><small>OBSERVE</small></div>
+      <svg class="visual-links" viewBox="0 0 600 360" preserveAspectRatio="none">
+        <path d="M90 100 C190 80 235 145 300 165 S430 165 510 90"/>
+        <path d="M90 260 C190 280 235 215 300 195 S430 195 510 270"/>
+        <path d="M300 165 L300 195"/>
+      </svg>
+      <div class="visual-status"><i></i><span>SYSTEMS IN MOTION</span><em>LIVE MODEL</em></div>
+    </div>
+  </div>
   <div class="hero-foot">
     <div>
       <p class="role rise">DevOps, cloud and infrastructure.<br>Early career, Bengaluru.</p>
@@ -61,6 +78,7 @@
 <section id="work" class="sec" data-label="Projects">
   <h2>Projects</h2>
   <article class="row feat">
+    <div class="project-index" aria-hidden="true">01</div>
     <h3>Event-driven e-commerce microservices platform</h3>
     <p>Four Node.js services behind an API gateway, talking through Kafka. Orders are confirmed or rejected by an inventory service that reserves stock atomically. Runs locally with Docker Compose; CI builds the stack and runs an end-to-end smoke test.</p>
     <ul class="tags"><li>Node.js</li><li>Express</li><li>Kafka (KRaft)</li><li>MongoDB</li><li>Redis</li><li>Docker Compose</li><li>GitHub Actions</li><li>Kubernetes manifests</li><li>Prometheus and Grafana</li></ul>
@@ -73,6 +91,7 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
     <a href="#case">Read the case study</a>
   </article>
   <article class="row">
+    <div class="project-index" aria-hidden="true">02</div>
     <h3>Linux Digital Detective</h3>
     <p>A Linux observability and incident-forensics lab. An agent watches CPU, memory, disk, nginx and port 80, records incidents as state transitions, and captures process, socket, journal and systemctl snapshots when something fails. A FastAPI service exposes it, including Prometheus-format metrics, and the agent and API can run as systemd services.</p>
     <ul class="tags"><li>Linux</li><li>systemd</li><li>Python</li><li>FastAPI</li><li>nginx</li><li>Prometheus-format metrics</li><li>GitHub Actions tests</li></ul>
@@ -97,7 +116,12 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
         <rect x="560" y="120" width="140" height="44" rx="4"/><text x="630" y="147">Kafka :9092</text>
         <rect x="560" y="220" width="140" height="44" rx="4"/><text x="630" y="247">MongoDB</text>
       </g>
-      <g class="e"><path d="M100 142H150M280 142H340M280 142L340 42M280 142L340 242M490 42H560M490 142H560M490 242H560"/></g>
+      <g class="e">
+        <path class="edge-main" d="M100 142H150M280 142H340"/>
+        <path class="edge-top" d="M280 142L340 42M490 42H560"/>
+        <path class="edge-mid" d="M490 142H560"/>
+        <path class="edge-bottom" d="M280 142L340 242M490 242H560"/>
+      </g>
     </svg>
     <figcaption>Topics: product-events, order-events, inventory-events.</figcaption>
   </figure>
@@ -113,6 +137,7 @@ product -> inventory -> order -> reservation -> confirmation</code></pre>
 </section>
 
 <section id="case" class="sec case" data-label="Case study">
+  <div class="section-signal" aria-hidden="true"><span>CASE STUDY</span><b>EVENT-DRIVEN SYSTEM</b></div>
   <h2>E-commerce platform case study</h2>
   <p class="cap">Drawn from the repository README.</p>
   <div class="cs"><h3>The problem</h3><p>A stock check done with plain REST calls couples every service to every other. The project explores what changes when services only share events.</p></div>
