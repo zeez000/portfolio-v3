@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdul Azeez – DevOps / Cloud / Infrastructure</title>
+<meta name="description" content="Early-career DevOps and cloud engineer in Bengaluru. Containerized, event-driven systems, CI, and Linux troubleshooting.">
+<meta name="theme-color" content="#07080c">
+<script>document.documentElement.classList.add('js');setTimeout(function(){if(!window.__ok)document.documentElement.classList.remove('js')},3000)</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
+<header class="bar">
+  <a class="mark" href="#top" aria-label="Abdul Azeez, home">AA.</a>
+  <p class="where" aria-hidden="true"><span id="where">Intro</span></p>
+  <nav class="links" aria-label="Primary">
+    <a href="#work">Projects</a><a href="#system">System</a><a href="#about">About</a>
+    <a href="#resume">Résumé</a><a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-btn mag" id="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+</header>
+<div class="menu" id="menu" hidden role="dialog" aria-modal="true" aria-label="Site index">
+  <nav aria-label="Site index">
+    <a href="#work">Projects</a><a href="#system">System</a><a href="#case">Case study</a>
+    <a href="#about">About</a><a href="#resume">Résumé</a><a href="#contact">Contact</a>
+  </nav>
+</div>
+
+<main id="main">
+<section class="hero" id="top">
+  <h1><span class="mask"><span class="ln">Abdul</span></span><span class="mask"><span class="ln">Azeez</span></span></h1>
+  <div class="hero-foot">
+    <div>
+      <p class="role rise">DevOps, cloud and infrastructure.<br>Early career, Bengaluru.</p>
+      <p class="lede rise">I build containerized, event-driven systems and work out why they break. Current focus: Linux, Docker, Kafka and CI.</p>
+    </div>
+    <ul class="go rise">
+      <li><a href="#work"><span>Projects</span><small>E-commerce microservices platform</small></a></li>
+      <li><a href="./resume.pdf" data-resume><span>Résumé</span><small>View PDF</small></a></li>
+      <li><a href="https://github.com/zeez000" rel="noopener"><span>GitHub</span><small>zeez000</small></a></li>
+      <li><a href="https://linkedin.com/in/abdul-azeez-046062249" rel="noopener"><span>LinkedIn</span><small>Profile</small></a></li>
+    </ul>
+  </div>
+</section>
+
+<section id="work" class="sec" data-label="Projects">
+  <h2>Projects</h2>
+  <article class="row feat">
+    <h3>Event-driven e-commerce microservices platform</h3>
+    <p>Four Node.js services behind an API gateway, talking through Kafka. Orders are confirmed or rejected by an inventory service that reserves stock atomically. Runs locally with Docker Compose; CI builds the stack and runs an end-to-end smoke test.</p>
+    <ul class="tags"><li>Node.js</li><li>Express</li><li>Kafka (KRaft)</li><li>MongoDB</li><li>Redis</li><li>Docker Compose</li><li>GitHub Actions</li><li>Kubernetes manifests</li><li>Prometheus and Grafana</li></ul>
+    <pre class="trace" aria-label="Commands and result quoted from the repository README"><code>$ docker compose up --build -d
+$ bash scripts/smoke-test.sh
+Smoke test passed:
+product -> inventory -> order -> reservation -> confirmation</code></pre>
+    <p class="cap">Quoted from the repository README.</p>
+    <a href="https://github.com/zeez000/ecommerce-platform" rel="noopener">Repository: zeez000/ecommerce-platform</a>
+    <a href="#case">Read the case study</a>
+  </article>
+  <article class="row">
+    <h3>Linux Digital Detective</h3>
+    <p>A Linux observability and incident-forensics lab. An agent watches CPU, memory, disk, nginx and port 80, records incidents as state transitions, and captures process, socket, journal and systemctl snapshots when something fails. A FastAPI service exposes it, including Prometheus-format metrics, and the agent and API can run as systemd services.</p>
+    <ul class="tags"><li>Linux</li><li>systemd</li><li>Python</li><li>FastAPI</li><li>nginx</li><li>Prometheus-format metrics</li><li>GitHub Actions tests</li></ul>
+    <a href="https://github.com/zeez000/devops/tree/main/linux-digital-detective" rel="noopener">Related repository: zeez000/devops</a>
+  </article>
+</section>
+
+<section id="system" class="sec" data-label="System">
+  <h2>How the platform fits together</h2>
+  <p class="cap">Architecture diagram. Static, based on the repository README.</p>
+  <figure class="diagram">
+    <svg viewBox="0 0 720 300" role="img" aria-labelledby="dt dd">
+      <title id="dt">E-commerce platform architecture</title>
+      <desc id="dd">A client calls the API gateway on port 8080, which routes to the product service on 3000, inventory on 3001 and order on 3002. The services share MongoDB, product uses Redis, and all communicate through Kafka topics product-events, order-events and inventory-events.</desc>
+      <g class="n" font-size="13">
+        <rect x="10" y="120" width="90" height="44" rx="4"/><text x="55" y="147">Client</text>
+        <rect x="150" y="120" width="130" height="44" rx="4"/><text x="215" y="147">API gateway :8080</text>
+        <rect x="340" y="20" width="150" height="44" rx="4"/><text x="415" y="47">Product :3000</text>
+        <rect x="340" y="120" width="150" height="44" rx="4"/><text x="415" y="147">Inventory :3001</text>
+        <rect x="340" y="220" width="150" height="44" rx="4"/><text x="415" y="247">Order :3002</text>
+        <rect x="560" y="20" width="140" height="44" rx="4"/><text x="630" y="47">Redis</text>
+        <rect x="560" y="120" width="140" height="44" rx="4"/><text x="630" y="147">Kafka :9092</text>
+        <rect x="560" y="220" width="140" height="44" rx="4"/><text x="630" y="247">MongoDB</text>
+      </g>
+      <g class="e"><path d="M100 142H150M280 142H340M280 142L340 42M280 142L340 242M490 42H560M490 142H560M490 242H560"/></g>
+    </svg>
+    <figcaption>Topics: product-events, order-events, inventory-events.</figcaption>
+  </figure>
+  <h3>Order flow</h3>
+  <p class="cap">Simulation. Not live infrastructure.</p>
+  <div class="sim" data-sim>
+    <div class="ctl">
+      <label>Stock <select id="sim-stock"><option value="ok">Enough</option><option value="no">Insufficient</option></select></label>
+      <button class="btn" id="sim-play">Play</button><button class="btn" id="sim-step">Step</button><button class="btn" id="sim-reset">Reset</button>
+    </div>
+    <ol id="sim-log" aria-live="polite"></ol>
+  </div>
+</section>
+
+<section id="case" class="sec case" data-label="Case study">
+  <h2>E-commerce platform case study</h2>
+  <p class="cap">Drawn from the repository README.</p>
+  <div class="cs"><h3>The problem</h3><p>A stock check done with plain REST calls couples every service to every other. The project explores what changes when services only share events.</p></div>
+  <div class="cs"><h3>Why microservices and Kafka</h3><p>Product, Inventory and Order are separate services. Product Service publishes <code>product.created</code> and never calls Inventory, which creates a stock record from the event. Kafka runs in KRaft mode, so no ZooKeeper.</p></div>
+  <div class="cs"><h3>Event flow</h3><p>Order Service stores a pending order and publishes <code>order.created</code>. Inventory reserves stock and publishes <code>inventory.reserved</code> or <code>inventory.rejected</code>. Every event carries the order ID, so two pending orders for one product cannot update each other.</p></div>
+  <div class="cs"><h3>Data</h3><p>MongoDB holds products, inventory and orders. Redis caches the product list for 60 seconds and is invalidated on writes. Stock reservation is a conditional update, so two concurrent orders cannot both take the last item.</p></div>
+  <div class="cs"><h3>Container networking</h3><p>In Compose, services reach each other by service name (<code>mongodb</code>, <code>kafka</code>). <code>localhost</code> inside a container means that container only.</p></div>
+  <div class="cs"><h3>CI pipeline</h3><p>On push and pull request: install, validate Compose, build images, start the whole stack, wait for a healthy gateway, run <code>scripts/smoke-test.sh</code>, and print container logs on failure. Images publish to GHCR from <code>main</code>.</p></div>
+  <div class="cs"><h3>Health checks and testing</h3><p>Every service has <code>/health</code> for traffic decisions and <code>/metrics</code> for Prometheus. The smoke test walks product, inventory, order, reservation and confirmation, then checks the stock count. The README lists unit tests as a gap.</p></div>
+  <div class="cs"><h3>Troubleshooting</h3><p>In a Codespace, service names resolved but container-to-container TCP timed out. The cause was a stale <code>iptables-legacy</code> FORWARD policy dropping traffic on Docker's bridge networks while Docker used <code>iptables-nft</code>. The repo includes an idempotent repair script.</p></div>
+  <div class="cs"><h3>What I would improve next</h3><p>Authentication and TLS, Kubernetes Secrets, dead-letter queues, idempotent consumers, real application metrics, unit tests, and Terraform with an AWS deployment. The Kubernetes manifests are in the repo, and the README lists local cluster testing as a next step.</p></div>
+  <p><a href="https://github.com/zeez000/ecommerce-platform" rel="noopener">Source: zeez000/ecommerce-platform</a></p>
+</section>
+
+<section id="skills" class="sec split" data-label="Skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div><h3>Used in my projects</h3><p>Linux (systemd, journalctl, ss), Docker, Docker Compose, Git and GitHub, GitHub Actions, Kafka, Python and FastAPI, Node.js and Express.</p></div>
+    <div><h3>Working knowledge</h3><p>Kubernetes manifests with Kustomize, Prometheus, Grafana, MongoDB, Redis.</p></div>
+    <div><h3>Learning</h3><p>AWS (EC2, S3, IAM, VPC, CloudWatch), Terraform, Ansible, Jenkins.</p></div>
+  </div>
+</section>
+
+<section id="about" class="sec split" data-label="About">
+  <h2>About</h2>
+  <p>Early-career engineer based in Bengaluru, targeting DevOps, cloud, platform and infrastructure roles. My public work is an event-driven microservices platform and a Linux incident-forensics lab.</p>
+</section>
+
+<section id="resume" class="sec split" data-label="Résumé">
+  <h2>Résumé</h2>
+  <div><p><a class="btn mag" href="./resume.pdf" data-resume>View résumé</a> <a class="btn mag" href="./resume.pdf" download data-resume>Download PDF</a></p></div>
+</section>
+
+<section id="contact" class="sec split" data-label="Contact">
+  <h2>Contact</h2>
+  <p><a class="big" href="mailto:abdzeez000@gmail.com">abdzeez000@gmail.com</a></p>
+  <p><a href="https://github.com/zeez000" rel="noopener">GitHub</a> and <a href="https://linkedin.com/in/abdul-azeez-046062249" rel="noopener">LinkedIn</a></p>
+</section>
+</main>
+<script type="module" src="/src/main.js"></script>
+<noscript><style>.mask .ln{transform:none!important}</style></noscript>
+</body>
+</html>
