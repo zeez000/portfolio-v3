@@ -1,0 +1,97 @@
+:root{--void:#07080c;--surface:#0d0f16;--line:rgba(255,255,255,.12);--text:#eceef6;--muted:#9097ad;--signal:#5ef0ff;--ok:#3ddc97;--bad:#ff6b7a;
+--display:'Bricolage Grotesque','Helvetica Neue',Arial,sans-serif;--sans:'Geist',system-ui,sans-serif;--mono:'Geist Mono',ui-monospace,monospace;
+--pad:clamp(1.25rem,5vw,5rem);--gap:clamp(1.5rem,4vw,4rem);box-sizing:border-box;padding-top:env(safe-area-inset-top,0)}
+*,*::before,*::after{box-sizing:inherit}
+html{background:var(--void);scroll-padding-top:5rem}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;color:var(--text);font:400 1rem/1.62 var(--sans);overflow-x:hidden}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:radial-gradient(60% 50% at 20% 20%,#1b2a6b55,transparent 70%),radial-gradient(50% 45% at 85% 30%,#4a1d8f44,transparent 70%),radial-gradient(40% 30% at 60% 90%,#0e5a7a44,transparent 70%),var(--void)}
+a{color:inherit;text-underline-offset:.25em;text-decoration-thickness:1px}a:hover{color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
+.skip{position:absolute;left:1rem;top:-4rem;background:var(--text);color:var(--void);padding:.6rem 1rem;z-index:100}.skip:focus{top:1rem}
+.progress{position:fixed;inset:0 0 auto;height:2px;background:var(--signal);transform:scaleX(0);transform-origin:0 50%;z-index:40}
+.bar{position:fixed;inset:0 0 auto;display:flex;align-items:center;gap:1.5rem;padding:1rem var(--pad);z-index:20;background:linear-gradient(var(--void) 30%,transparent)}
+.mark{font:800 1.5rem var(--display);text-decoration:none;letter-spacing:-.03em}
+.where{margin:0 auto 0 0;font-size:.9rem;color:var(--muted)}
+.links{display:flex;gap:1.75rem}.links a{text-decoration:none;font-size:.95rem;padding:.5rem 0;border-bottom:1px solid transparent}.links a:hover{border-color:var(--signal)}
+.menu-btn{display:none;font:inherit;color:inherit;background:none;border:1px solid var(--line);padding:.6rem 1.1rem;min-height:44px;border-radius:2rem}
+.menu{position:fixed;inset:0;z-index:30;background:var(--void);display:grid;align-content:center;padding:0 var(--pad);clip-path:inset(0 0 100% 0)}.menu[hidden]{display:none}
+.menu nav{display:grid}.menu a{font:700 clamp(2.5rem,10vw,6.5rem)/1.05 var(--display);letter-spacing:-.03em;text-decoration:none;border-top:1px solid var(--line);padding:.35em 0}
+main{padding:0 var(--pad)}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 0 3rem}
+h1{margin:0 0 clamp(2rem,5vw,4.5rem) -.035em;font:780 clamp(4.2rem,14.8vw,14.5rem)/.84 var(--display);letter-spacing:-.048em;max-width:54vw}
+.mask{display:block;overflow:hidden;padding:.06em 0 .1em}.ln{display:block}
+.hero-foot{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:end;border-top:1px solid var(--line);padding-top:1.5rem}
+.role{font:600 clamp(1.25rem,2.5vw,2.05rem)/1.16 var(--display);letter-spacing:-.018em;margin:0 0 1rem}.lede{color:var(--muted);max-width:32rem;margin:0}
+.go{list-style:none;margin:0;padding:0}.go li{border-bottom:1px solid var(--line)}
+.go a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;min-height:44px;padding:.7rem 0;text-decoration:none;transition:padding .25s}
+.go a span{font:600 1.25rem var(--display)}.go small{color:var(--muted);font-size:.85rem}.go a:hover{padding-left:.6rem}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:.6rem 1.25rem;border:1px solid var(--line);border-radius:2rem;color:var(--text);background:rgba(13,15,22,.7);font:inherit;text-decoration:none;cursor:pointer;will-change:transform}
+.btn:hover{border-color:var(--signal);color:var(--signal)}
+/* sections */
+.sec{padding:clamp(5rem,12vw,10rem) 0 clamp(3rem,6vw,6rem);border-top:1px solid var(--line)}
+.split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--gap)}
+.split>h2{position:sticky;top:5.5rem;align-self:start}
+h2{font:700 clamp(2.15rem,5.3vw,5rem)/.96 var(--display);letter-spacing:-.035em;margin:0 0 3rem}.split>h2{margin:0}
+h3{font:600 1.3rem/1.25 var(--display);letter-spacing:-.01em;margin:2.5rem 0 .5rem}
+p{max-width:40rem;margin:0 0 1rem}.cap{font-size:.85rem;color:var(--muted)}
+code{font:.88em var(--mono);color:var(--signal)}
+/* project rows */
+.row{display:grid;gap:.75rem;padding:2.5rem 0;border-top:1px solid var(--line)}
+.row h3{margin:0;font:700 clamp(1.8rem,5vw,4.5rem)/1 var(--display);letter-spacing:-.035em;max-width:16ch}.row p{color:var(--muted)}
+.row a{margin-right:1.75rem}.feat{border-top:2px solid var(--signal)}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;padding:0;margin:.5rem 0}.tags li{border:1px solid var(--line);border-radius:2rem;padding:.15rem .75rem;font-size:.85rem;color:var(--muted)}
+.trace{margin:1rem 0 0;padding:1.1rem 1.25rem;background:var(--surface);border-left:2px solid var(--signal);overflow-x:auto;font:.88rem/1.7 var(--mono);max-width:44rem}.trace code{color:var(--text)}
+/* system */
+.diagram{margin:1.5rem 0 3rem;overflow-x:auto}.diagram svg{width:100%;min-width:560px;height:auto}
+.n rect{fill:var(--surface);stroke:var(--line)}.n text{fill:var(--text);text-anchor:middle;font-family:var(--sans)}
+.e path{fill:none;stroke:var(--muted);stroke-width:1.2}figcaption{font-size:.85rem;color:var(--muted)}
+.sim{border:1px solid var(--line);padding:1.25rem;background:var(--surface);border-radius:.4rem;max-width:50rem}
+.ctl{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}select{font:inherit;color:inherit;background:var(--void);border:1px solid var(--line);padding:.5rem;min-height:44px}
+#sim-log{padding-left:1.25rem;font:.9rem/1.7 var(--mono);min-height:4rem}#sim-log .ok{color:var(--ok)}#sim-log .bad{color:var(--bad)}
+/* case study: heading column + reading column */
+.case{max-width:none}.cs{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--gap);padding:1.75rem 0;border-top:1px solid var(--line)}
+.cs h3{position:sticky;top:5.5rem;align-self:start;margin:0}.cs p{margin:0;font-size:1.1rem}
+/* skills / misc */
+.skills>div{padding:1.25rem 0;border-top:1px solid var(--line)}.skills h3{margin:0 0 .25rem}.skills p{color:var(--muted)}
+.big{font:600 clamp(1.15rem,2.4vw,2.25rem)/1.2 var(--display);letter-spacing:-.02em;word-break:break-word}
+/* progressive enhancement: hidden states only while JS is alive; index.html removes .js if the app fails to start */
+.js .mask .ln{transform:translateY(105%)}
+.js .rise,.js .row,.js .stage,.js .skills>div{opacity:0;transform:translateY(16px)}
+@media (max-width:860px){.hero-foot,.split,.cs{grid-template-columns:minmax(0,1fr)}.split>h2,.cs h3{position:static;margin-bottom:.75rem}.links,.where{display:none}.menu-btn{display:block;margin-left:auto}}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.js .mask .ln,.js .rise,.js .row,.js .stage,.js .skills>div{opacity:1;transform:none}.progress{display:none}}
+/* ===== v2 visual layer ===== */
+.hero{position:relative;overflow:clip}
+.hero-topo{position:absolute;right:1.5vw;top:15%;width:min(46vw,840px);pointer-events:none;opacity:.98;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 100%)}
+h1,.hero-foot{position:relative;z-index:1}
+.tp{display:block;width:100%;height:auto;overflow:visible}
+.tl{fill:none;stroke:rgba(150,170,255,.28);stroke-width:1.2}.tl.hot{stroke:var(--signal);stroke-width:1.8}
+.nd rect{fill:rgba(13,15,22,.88);stroke:rgba(150,170,255,.34);transition:stroke .3s,fill .3s}.nd text{fill:var(--text);font:600 11.5px var(--mono);letter-spacing:.015em;text-anchor:middle}
+.nd-kafka rect{stroke:#7b6cff}.nd-redis rect{stroke:#c455a8}.nd-mongo rect{stroke:#4468ff}
+.nd.on rect{stroke:var(--signal);fill:#0b2630}.nd.is-ok rect{stroke:var(--ok);fill:#0b2a1f}.nd.is-bad rect{stroke:var(--bad);fill:#2a0f14}
+.pulse{fill:var(--signal)}
+.stage-sec{margin:0 calc(var(--pad)*-1);padding-left:var(--pad);padding-right:var(--pad)}
+.stage{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:var(--gap);margin:2rem 0;padding:clamp(1rem,3vw,2.5rem);background:rgba(13,15,22,.72);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.flow{overflow-x:auto}.flow .tp{min-width:640px}
+.panel #sim-log{padding-left:1.1rem;font-size:.88rem}.panel #sim-log li{margin-bottom:.5rem}
+.feat h3{font-size:clamp(2.6rem,8vw,8.5rem);max-width:11.5ch;line-height:.92}
+.marq{overflow:hidden;margin:1rem calc(var(--pad)*-1);border-block:1px solid var(--line)}
+.marq div{display:flex;width:max-content;animation:marq 38s linear infinite;will-change:transform}
+.marq span{font:700 clamp(2rem,6vw,5rem)/1.3 var(--display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(236,238,246,.35);white-space:nowrap}
+@keyframes marq{to{transform:translateX(-50%)}}
+.row{position:relative;--mx:50%;--my:50%}
+.row::before{content:"";position:absolute;inset:0;background:radial-gradient(420px circle at var(--mx) var(--my),rgba(94,240,255,.07),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}.row:hover::before{opacity:1}
+.cs{opacity:.3;transition:opacity .5s}.cs.on{opacity:1}.js .cs{transform:none}
+.js .sec h2{opacity:1;transform:translateY(24px);clip-path:inset(0 0 100% 0)}
+.sec:nth-of-type(odd) h2{letter-spacing:-.05em}
+@media (max-width:860px){.hero-topo{position:static;width:100%;margin:0 0 1.35rem;-webkit-mask-image:none;mask-image:none;opacity:.92}.stage{grid-template-columns:minmax(0,1fr)}.feat h3{font-size:clamp(2.5rem,12vw,5rem)}}
+@media (prefers-reduced-motion:reduce){.marq div{animation:none}.cs{opacity:1}.js .sec h2{clip-path:none;transform:none}}
+
+.hero-topo::before{content:"SYSTEM TOPOLOGY · E-COMMERCE PLATFORM";position:absolute;right:0;top:-1.45rem;color:var(--muted);font:500 .64rem/1 var(--mono);letter-spacing:.11em}
+@media (max-width:860px){.hero-topo::before{position:static;display:block;margin-bottom:.65rem;text-align:right;font-size:.62rem}.hero .tp{min-width:0}}
+
+@media (min-width:861px){
+  .hero h1{width:54vw}
+  .hero-topo .tp{filter:drop-shadow(0 8px 24px rgba(0,0,0,.18))}
+}
