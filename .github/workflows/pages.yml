@@ -3,7 +3,7 @@ name: Deploy preview
 on:
   push:
     branches:
-      - design/v1
+      - main
   workflow_dispatch:
 
 permissions:
