@@ -1,7 +1,3 @@
-import '@fontsource-variable/bricolage-grotesque';
-import '@fontsource-variable/geist';
-import '@fontsource-variable/geist-mono';
-import './styles/main.css';
 import { initScroll } from './scroll.js';
 import { initHero, initReveals, initSectionState, initMagnetic, initMenu, initChapters, initSpotlight } from './motion.js';
 import { initHeroTopology, initSystem } from './flow.js';
