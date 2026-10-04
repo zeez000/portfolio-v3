@@ -4,7 +4,7 @@
 *,*::before,*::after{box-sizing:inherit}
 html{background:var(--void);scroll-padding-top:5rem}
 html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
-body{margin:0;color:var(--text);font:400 1.0625rem/1.65 var(--sans);overflow-x:hidden}
+body{margin:0;color:var(--text);font:400 1rem/1.62 var(--sans);overflow-x:hidden}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;background:radial-gradient(60% 50% at 20% 20%,#1b2a6b55,transparent 70%),radial-gradient(50% 45% at 85% 30%,#4a1d8f44,transparent 70%),radial-gradient(40% 30% at 60% 90%,#0e5a7a44,transparent 70%),var(--void)}
 a{color:inherit;text-underline-offset:.25em;text-decoration-thickness:1px}a:hover{color:var(--signal)}
 :focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:2px}
@@ -20,10 +20,10 @@ a{color:inherit;text-underline-offset:.25em;text-decoration-thickness:1px}a:hove
 main{padding:0 var(--pad)}
 /* hero */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:7rem 0 3rem}
-h1{margin:0 0 clamp(2rem,6vw,5rem) -.04em;font:800 clamp(4.5rem,21vw,20rem)/.8 var(--display);letter-spacing:-.055em}
+h1{margin:0 0 clamp(2rem,5vw,4.5rem) -.035em;font:780 clamp(4.2rem,18vw,17rem)/.82 var(--display);letter-spacing:-.048em}
 .mask{display:block;overflow:hidden;padding:.06em 0 .1em}.ln{display:block}
 .hero-foot{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--gap);align-items:end;border-top:1px solid var(--line);padding-top:1.5rem}
-.role{font:600 clamp(1.4rem,3vw,2.4rem)/1.15 var(--display);letter-spacing:-.02em;margin:0 0 1rem}.lede{color:var(--muted);max-width:32rem;margin:0}
+.role{font:600 clamp(1.25rem,2.5vw,2.05rem)/1.16 var(--display);letter-spacing:-.018em;margin:0 0 1rem}.lede{color:var(--muted);max-width:32rem;margin:0}
 .go{list-style:none;margin:0;padding:0}.go li{border-bottom:1px solid var(--line)}
 .go a{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;min-height:44px;padding:.7rem 0;text-decoration:none;transition:padding .25s}
 .go a span{font:600 1.25rem var(--display)}.go small{color:var(--muted);font-size:.85rem}.go a:hover{padding-left:.6rem}
@@ -33,7 +33,7 @@ h1{margin:0 0 clamp(2rem,6vw,5rem) -.04em;font:800 clamp(4.5rem,21vw,20rem)/.8 v
 .sec{padding:clamp(5rem,12vw,10rem) 0 clamp(3rem,6vw,6rem);border-top:1px solid var(--line)}
 .split{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:var(--gap)}
 .split>h2{position:sticky;top:5.5rem;align-self:start}
-h2{font:700 clamp(2.25rem,6vw,5.5rem)/.95 var(--display);letter-spacing:-.04em;margin:0 0 3rem}.split>h2{margin:0}
+h2{font:700 clamp(2.15rem,5.3vw,5rem)/.96 var(--display);letter-spacing:-.035em;margin:0 0 3rem}.split>h2{margin:0}
 h3{font:600 1.3rem/1.25 var(--display);letter-spacing:-.01em;margin:2.5rem 0 .5rem}
 p{max-width:40rem;margin:0 0 1rem}.cap{font-size:.85rem;color:var(--muted)}
 code{font:.88em var(--mono);color:var(--signal)}
@@ -63,11 +63,11 @@ code{font:.88em var(--mono);color:var(--signal)}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.js .mask .ln,.js .rise,.js .row,.js .stage,.js .skills>div{opacity:1;transform:none}.progress{display:none}}
 /* ===== v2 visual layer ===== */
 .hero{position:relative;overflow:clip}
-.hero-topo{position:absolute;right:calc(var(--pad)*-1);top:9%;width:min(66vw,1080px);pointer-events:none;-webkit-mask-image:linear-gradient(90deg,transparent,#000 35%);mask-image:linear-gradient(90deg,transparent,#000 35%)}
+.hero-topo{position:absolute;right:0;top:10%;width:min(56vw,920px);pointer-events:none;opacity:.96;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%);mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%)}
 h1,.hero-foot{position:relative;z-index:1}
 .tp{display:block;width:100%;height:auto;overflow:visible}
 .tl{fill:none;stroke:rgba(150,170,255,.28);stroke-width:1.2}.tl.hot{stroke:var(--signal);stroke-width:1.8}
-.nd rect{fill:rgba(13,15,22,.85);stroke:rgba(150,170,255,.3);transition:stroke .3s,fill .3s}.nd text{fill:var(--text);font:500 13px var(--sans);text-anchor:middle}
+.nd rect{fill:rgba(13,15,22,.88);stroke:rgba(150,170,255,.34);transition:stroke .3s,fill .3s}.nd text{fill:var(--text);font:600 11.5px var(--mono);letter-spacing:.015em;text-anchor:middle}
 .nd-kafka rect{stroke:#7b6cff}.nd-redis rect{stroke:#c455a8}.nd-mongo rect{stroke:#4468ff}
 .nd.on rect{stroke:var(--signal);fill:#0b2630}.nd.is-ok rect{stroke:var(--ok);fill:#0b2a1f}.nd.is-bad rect{stroke:var(--bad);fill:#2a0f14}
 .pulse{fill:var(--signal)}
@@ -75,7 +75,7 @@ h1,.hero-foot{position:relative;z-index:1}
 .stage{display:grid;grid-template-columns:minmax(0,8fr) minmax(0,4fr);gap:var(--gap);margin:2rem 0;padding:clamp(1rem,3vw,2.5rem);background:rgba(13,15,22,.72);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .flow{overflow-x:auto}.flow .tp{min-width:640px}
 .panel #sim-log{padding-left:1.1rem;font-size:.88rem}.panel #sim-log li{margin-bottom:.5rem}
-.feat h3{font-size:clamp(2.75rem,10vw,10rem);max-width:11ch;line-height:.9}
+.feat h3{font-size:clamp(2.6rem,8vw,8.5rem);max-width:11.5ch;line-height:.92}
 .marq{overflow:hidden;margin:1rem calc(var(--pad)*-1);border-block:1px solid var(--line)}
 .marq div{display:flex;width:max-content;animation:marq 38s linear infinite;will-change:transform}
 .marq span{font:700 clamp(2rem,6vw,5rem)/1.3 var(--display);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px rgba(236,238,246,.35);white-space:nowrap}
@@ -85,5 +85,8 @@ h1,.hero-foot{position:relative;z-index:1}
 .cs{opacity:.3;transition:opacity .5s}.cs.on{opacity:1}.js .cs{transform:none}
 .js .sec h2{opacity:1;transform:translateY(24px);clip-path:inset(0 0 100% 0)}
 .sec:nth-of-type(odd) h2{letter-spacing:-.05em}
-@media (max-width:860px){.hero-topo{position:static;width:100%;margin:0 0 1.5rem;-webkit-mask-image:none;mask-image:none;opacity:.8}.stage{grid-template-columns:minmax(0,1fr)}.feat h3{font-size:clamp(2.5rem,14vw,5rem)}}
+@media (max-width:860px){.hero-topo{position:static;width:100%;margin:0 0 1.35rem;-webkit-mask-image:none;mask-image:none;opacity:.92}.stage{grid-template-columns:minmax(0,1fr)}.feat h3{font-size:clamp(2.5rem,12vw,5rem)}}
 @media (prefers-reduced-motion:reduce){.marq div{animation:none}.cs{opacity:1}.js .sec h2{clip-path:none;transform:none}}
+
+.hero-topo::before{content:"SYSTEM TOPOLOGY · E-COMMERCE PLATFORM";position:absolute;right:0;top:-1.45rem;color:var(--muted);font:500 .68rem/1 var(--mono);letter-spacing:.12em}
+@media (max-width:860px){.hero-topo::before{position:static;display:block;margin-bottom:.65rem;text-align:right;font-size:.62rem}.hero .tp{min-width:0}}
